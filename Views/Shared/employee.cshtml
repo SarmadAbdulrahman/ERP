@@ -1,0 +1,627 @@
+﻿@using erp.Models;
+@{
+    var dataOfGetLicenseDegs = ViewData["GetLicenseDegs"];
+    var GetLicenseNamet = ViewData["GetLicenseNamet"];
+
+
+
+    }
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Dashboards</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            @*<h3>@Count</h3>*@
+                            <h3>0</h3>
+                            <p>Baranchs</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            @*<h3>@data</h3>*@
+                            <h3>0</h3>
+                            <p>Departments</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-stats-bars"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            @*<h3>@Sections</h3>*@
+                            <h3>0</h3>
+
+                            <p>Sections</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+
+                            <h3>0</h3>
+
+                            <p>Count off Empployee</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+            </div>
+            <!-- /.row -->
+            <!-- Main row -->
+            <div class="row">
+                <!-- Left col -->
+                <section class="col-lg-12 connectedSortable">
+                    <!-- Custom tabs (Charts with tabs)-->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-chart-pie mr-1"></i>
+
+                            </h3>
+                            <div class="card-tools">
+
+                            </div>
+                        </div><!-- /.card-header -->
+                        <div class="card-body">
+
+
+
+                            <center>اضافة موضف</center>
+
+
+
+
+
+
+
+                            <form method="post" action="employee/StoreEmployee">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">الاسم </label>
+                                                <input type="text" name="FirstNameAR" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="الاسم" required>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">الاسم الاب</label>
+                                                <input type="text" name="MidNameAR" class="form-control" id="exampleInputPassword1" placeholder="الاسم الاب" required>
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">الاسم الجد</label>
+                                                <input type="text" name="LastNameAR" class="form-control" id="exampleInputPassword1" placeholder="الاسم الجد" required>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">الاسم الام </label>
+                                                <input type="text" name="MotherNameAR" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="الاسم الام" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+
+
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">First Name </label>
+                                                <input type="text" name="FirstNameEN" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="الاسم" required>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Father Name</label>
+                                                <input type="text" name="MidNameEN" class="form-control" id="exampleInputPassword1" placeholder="الاسم الاب" required>
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Grand Father</label>
+                                                <input type="text" name="LastNameEN" class="form-control" id="exampleInputPassword1" placeholder="الاسم الجد" required>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Mother Name</label>
+                                                <input type="text" name="MotherNameEN" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="الاسم الام" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+
+
+
+
+
+                                <div class="row">
+                                    <div class="col-lg-12">
+
+
+
+
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1"> العنوان</label>
+                                                <input type="text" name="Address" class="form-control" id="exampleInputPassword1" placeholder="العنوان" required>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">رقم الهاتف</label>
+                                                <input type="text" name="PhoneNo" class="form-control" id="exampleInputPassword1" placeholder="رقم الهاتف" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">المواليد</label>
+                                                <input type="date" name="BirthDate" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="المواليد" required>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1"> تاريخ المباشره</label>
+                                                <input type="date" name="JoinDate" class="form-control" id="exampleInputPassword1" placeholder="تاريخ المباشره" required>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">اسم اقارب</label>
+                                                <input type="text" name="EmergencyComtactName" class="form-control" id="exampleInputPassword1" placeholder="اسم اقارب" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+
+
+
+
+                                <div class="row">
+                                    <div class="col-lg-12">
+
+
+                                   
+
+
+
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">ملاحضات</label>
+                                                <input type="text" name="Notes" class="form-control" id="exampleInputPassword1" placeholder="ملاحضات" required>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">عدد الاطفال</label>
+                                                <input type="text" name="ChildrenCount" class="form-control" id="exampleInputPassword1" placeholder="عدد الاطفال" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="row">
+                                    <div class="col-lg-12">
+
+
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">رقم اقارب</label>
+                                                <input type="text" name="EmergencyPhoneNo" class="form-control" id="exampleInputPassword1" placeholder="رقم الهاتف" required>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">التحصيل الدراسي</label>
+                                                <select class="form-control" name="LicenseDigreeID" id="BelongToBarnch2">
+                                                    <option></option>
+                                                    @foreach (AutoGenerateModel employee in (AutoGenerateModel[])ViewBag.dataOfGetLicenseDegs)
+                                                    {
+                                                        <option value=@employee.ID> @employee.Text</option>
+
+                                                    }
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">الشهاده</label>
+                                                    <select class="form-control" name="LicenseNameID" id="BelongToBarnch2">
+                                                        <option></option>
+                                                        @foreach (AutoGenerateModel employee in (AutoGenerateModel[])ViewBag.GetLicenseNamet)
+                                                        {
+                                                            <option value=@employee.ID> @employee.Text</option>
+
+                                                        }
+
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+                                <div class="row">
+                                    <div class="col-lg-12">
+
+
+
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">الجنس</label>
+                                                <select class="form-control" name="GenderID" id="BelongToBarnch2">
+                                                    <option></option>
+                                                    @foreach (AutoGenerateModel employee in (AutoGenerateModel[])ViewBag.GenderList)
+                                                    {
+                                                        <option value=@employee.ID> @employee.Text</option>
+
+                                                    }
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">الحالة الزوجيه</label>
+                                                <select class="form-control" name="MaritalStatusID" id="BelongToBarnch2">
+                                                    <option></option>
+                                                    @foreach (AutoGenerateModel employee in (AutoGenerateModel[])ViewBag.MaritalStatusIDList)
+                                                    {
+                                                        <option value=@employee.ID> @employee.Text</option>
+
+                                                    }
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+
+
+
+
+</div>
+
+                                <center>
+                                    <button type="submit" class="btn btn-primary">اضافة</button>
+                                </center>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <form method="post" action="uint/EditU">
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">تعديل</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label"> الاسم عربي:</label>
+                                            <input type="text" name="OrgUnitNameAR" class="form-control" id="recipient-name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message-text" class="col-form-label">الاسم انكليزي:</label>
+                                            <input type="text" name="OrgUnitNameEN" class="form-control" id="recipient-name">
+                                        </div>
+
+                                        <input type="hidden" name="OrgUnitID" id="OrgUnitID" />
+
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">نوع التفرع</label>
+                                                <select class="form-control" name="OrgType" id="typeOfsections2">
+
+                                                    <option></option>
+                                                    <option value="1">دائرة</option>
+                                                    <option value="2">قسم</option>
+                                                    <option value="3">شعبة</option>
+
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+          
+
+
+
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">يتبع الى</label>
+                                                <select class="form-control" name="B2MasterID" id="BelongToBarnch2" disabled >
+                                                    <option></option>
+                                                    @*@foreach (BaranchModels employee in (BaranchModels[])ViewBag.baranchModels)
+                                                    {
+                                                        <option value=@employee.BranchID> @employee.Name</option>
+
+                                                    }*@
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">غلق</button>
+                                        <button type="submit" class="btn btn-primary">خزن</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+                    <form method="post" action="department/StoperD">
+                        <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">تعديل</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+
+
+
+                                        <input type="hidden" name="DepartmentID" id="BranchID2" />
+
+                                        <p class="lead">هل انت متاكد من ايقاف الفرع</p>
+
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">غلق</button>
+                                        <button type="submit" class="btn btn-primary">نعم</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+
+
+
+
+
+
+
+                    <div class="row">
+                        <!-- Left col -->
+                        <section class="col-lg-12 connectedSortable">
+                            <!-- Custom tabs (Charts with tabs)-->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <i class="fas fa-chart-pie mr-1"></i>
+
+                                    </h3>
+                                    <div class="card-tools">
+
+                                    </div>
+                                </div><!-- /.card-header -->
+                                <div class="card-body">
+
+
+
+                                    <center>عرض وحدة</center>
+                                    <table cellpadding="0" cellspacing="0" class="table">
+                                        <thead>
+                                            <tr>
+
+                                                <th scope="col">الاجرائات</th>
+                                                <th scope="col">الاسم عربي</th>
+                                                <th scope="col">الاسم انكليزي</th>
+                                                <th scope="col">يتبع الى</th>
+                                            
+
+                                            </tr>
+                                        </thead>
+                                        @*@foreach (UnitModel employee in (UnitModel[])ViewBag.UnitModels)
+                                        {
+
+
+                                        <tr>
+
+
+                                            <td>
+                                                @if (employee.strIsActive == "True")
+                                                {
+
+                                                    <button id="@employee.OrgUnitID" class="btn-block btn-danger StoperForm"> ايقاف</button>
+                                                    <button id="@employee.OrgUnitID" value="@employee.strIsActive" class="btn-block btn-warning EditForm"> تعديل</button>
+
+                                                }
+                                                else
+                                                {
+
+                                                    <p>لابمكن الايقاف</p>
+                                                    <button id="@employee.OrgUnitID" class="btn-block btn-warning EditForm"> تعديل</button>
+                                                }
+
+                                            </td>
+
+                                            <td>@employee.OrgUnitNameEN</td>
+                                            <td>@employee.OrgUnitNameAR</td>
+                                         
+                                            @if (employee.OrgType == 1)
+                                            {
+
+                                       
+                                                <td>
+                                                    @employee.strOrgType
+                                                    @employee.SectionAR
+                                                </td>
+                                            }
+                                            else
+                                            {
+
+                                   
+                                                <td>
+                                                   
+                                                    @employee.strOrgType
+                                                    @employee.SectionAR
+                                                </td>
+                                            }
+
+
+                                        </tr>
+                                        }*@
+                                    </table>
+                                </div>
+                            </div>
+                    </div>
+
+
+                    <!-- /.card-body -->
+            </div>
+    </section>
+</div>
+<!-- /.row (main row) -->
+ </div><!-- /.container-fluid -->
+    </section>
+<!-- /.content -->
+</div>
+

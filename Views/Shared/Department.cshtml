@@ -1,0 +1,362 @@
+﻿@using erp.Models;
+@{
+    var data = ViewData["CountOfBaranchs"];
+    var Count = ViewData["CountOfBarancher"];
+
+    }
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Dashboards</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>@Count</h3>
+
+                            <p>Baranchs</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>@data</h3>
+
+                            <p>Departments</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-stats-bars"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>0</h3>
+
+                            <p>Sections</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+
+                            <h3>0</h3>
+
+                            <p>Count off Empployee</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+            </div>
+            <!-- /.row -->
+            <!-- Main row -->
+            <div class="row">
+                <!-- Left col -->
+                <section class="col-lg-12 connectedSortable">
+                    <!-- Custom tabs (Charts with tabs)-->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-chart-pie mr-1"></i>
+
+                            </h3>
+                            <div class="card-tools">
+
+                            </div>
+                        </div><!-- /.card-header -->
+                        <div class="card-body">
+
+
+
+                            <center>اضافة قسم</center>
+
+
+
+
+
+
+
+                            <form method="post" action="department/StoreDepartment">
+                                <div class="row">
+                                    <div class="col-lg-12">
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">الاسم عربي</label>
+                                                <input type="text" name="DepartmentDescAR" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ar Name" required>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">الاسم انكليزي</label>
+                                                <input type="text" name="DepartmentDescEN" class="form-control" id="exampleInputPassword1" placeholder="En Name" required>
+                                            </div>
+
+                                        </div>
+
+
+
+
+
+
+
+
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">يتبع الى</label>
+                                                <select class="form-control" name="Branch_ID" id="BelongToBarnch">
+                                                    <option></option>
+                                                    @foreach (BaranchModels employee in (BaranchModels[])ViewBag.baranchModels)
+                                                        {
+                                                            <option value=@employee.BranchID> @employee.Name</option>
+
+                                                        }
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+
+
+
+                                    </div>
+                                </div>
+
+
+
+
+
+                                <center>
+                                    <button type="submit" class="btn btn-primary">اضافة</button>
+                                </center>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <form method="post" action="department/EditD">
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">تعديل</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label"> الاسم عربي:</label>
+                                            <input type="text" name="DepartmentDescAR" class="form-control" id="recipient-name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message-text" class="col-form-label">الاسم انكليزي:</label>
+                                            <input type="text" name="DepartmentDescEN" class="form-control" id="recipient-name">
+                                        </div>
+
+                                        <input type="hidden" name="DepartmenteorID"   id="DepartmenteorID" />
+
+
+
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">يتبع الى</label>
+                                                <select class="form-control" name="Branch_ID" id="BelongToBarnch2">
+                                                    <option></option>
+                                                    @foreach (BaranchModels employee in (BaranchModels[])ViewBag.baranchModels)
+                                                    {
+                                                        <option value=@employee.BranchID> @employee.Name</option>
+
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">غلق</button>
+                                        <button type="submit" class="btn btn-primary">خزن</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+                    <form method="post" action="department/StoperD">
+                        <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">تعديل</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+
+
+
+                                        <input type="hidden" name="DepartmentID" id="BranchID2" />
+
+                                        <p class="lead">هل انت متاكد من ايقاف الفرع</p>
+
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">غلق</button>
+                                        <button type="submit" class="btn btn-primary">نعم</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+
+
+
+
+
+
+
+                    <div class="row">
+                        <!-- Left col -->
+                        <section class="col-lg-12 connectedSortable">
+                            <!-- Custom tabs (Charts with tabs)-->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <i class="fas fa-chart-pie mr-1"></i>
+
+                                    </h3>
+                                    <div class="card-tools">
+
+                                    </div>
+                                </div><!-- /.card-header -->
+                                <div class="card-body">
+
+
+
+                                    <center>عرض الاقسام</center>
+                                    <table cellpadding="0" cellspacing="0" class="table">
+                                        <thead>
+                                            <tr>
+
+                                                <th scope="col">الاجرائات</th>
+                                                <th scope="col">الاسم عربي</th>
+                                                <th scope="col">الاسم انكليزي</th>
+                                                <th scope="col">يتبع الى</th>
+                                            
+
+                                            </tr>
+                                        </thead>
+                                        @foreach (DepartmentModel employee in (DepartmentModel[])ViewBag.DepartmentModelList)
+                                        {
+
+
+                                        <tr>
+
+
+                                            <td>
+                                                @if (employee.CanBeDeactivated == "True")
+                                                {
+
+                                                    <button id="@employee.DepartmentID" class="btn-block btn-danger StoperForm"> ايقاف</button>
+                                                    <button id="@employee.DepartmentID" value="@employee.CanBeDeactivated" class="btn-block btn-warning EditForm"> تعديل</button>
+
+                                                }
+                                                else
+                                                {
+
+                                                    <p>لابمكن الايقاف</p>
+                                                    <button id="@employee.DepartmentID" class="btn-block btn-warning EditForm"> تعديل</button>
+                                                }
+
+                                            </td>
+                                            <td>@employee.DepartmentDescAR</td>
+                                            <td>@employee.DepartmentDescEN</td>
+                                            <td>@employee.BranchDescAR</td>
+                                            <td>@employee.DepartmentID</td>
+
+                                        </tr>
+                                        }
+                                    </table>
+                                </div>
+                            </div>
+                    </div>
+
+
+                    <!-- /.card-body -->
+            </div>
+    </section>
+</div>
+<!-- /.row (main row) -->
+        </div><!-- /.container-fluid -->
+    </section>
+<!-- /.content -->
+</div>
+
